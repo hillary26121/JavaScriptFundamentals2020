@@ -112,28 +112,28 @@ function caseInSwitch(num) {
       num = "ONE";
       break;
       case 2:
-        console.log("TWO");
+        num = "TWO";
         break;
         case 3: 
-          console.log("THREE");
+          num = "THREE";
           break;
           case 4:
-            console.log("FOUR");
+            num = "FOUR";
             break;
             case 5:
                 num = "FIVE";
             break;
             case 6:
-                console.log("SIX");
+                num = "SIX";
               break;
               case 7:
                 num = "SEVEN";
               break;
               case 8:
-                console.log("EIGHT");
+                num = "EIGHT";
               break;
               case 9:
-                console.log("NINE");
+                num = "NINE";
               break;
               default:
               num = "PLEASE TRY AGAIN";
