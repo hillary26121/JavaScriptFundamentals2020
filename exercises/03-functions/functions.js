@@ -32,14 +32,16 @@ const timesFive = (num)=>{
  * @example lowerCaseName(); // undefined (should not throw an error)
  * @example lowerCaseName(null); // undefined (should not throw an error)
  */
-
-const lowerCaseName = (name) =>{
-return name.toLowerCase();
-// if(name !== ""){
-//   return lowerCaseName();
-//   break;
+// let abortAt = null;
+// function lowerCaseName(name){
+//   return name.toLowerCase();
+  
 // }
-
+const lowerCaseName = (name) =>{
+ if (!name){
+   return;
+ }
+ return name.toLowerCase();
  };
 
 
