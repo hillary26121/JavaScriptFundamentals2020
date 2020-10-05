@@ -6,6 +6,7 @@
 const accessingAnItem = () => {
   const cars = ["BMW", "Honda", "Civic"]; // Do not change this line
   // Write code here
+  return cars[0];
 };
 
 /**
@@ -16,7 +17,7 @@ const accessingAnItem = () => {
 
 const addToAnArray = () => {
   const languages = ["JavaScript"]; // Do not change this line
-
+  languages.push('CSS', 'HTML', "PYTHON"); 
   /* Add three more items to the "languages" array here */
 
   return languages;
@@ -30,7 +31,14 @@ const addToAnArray = () => {
  * @example combineArray(['Japan','China','India'], ['USA','UK']) // ['Japan','China','India','USA','UK']
  **/
 
-const combineArray = (array1, array2) => {};
+const combineArray = (array1, array2) => {
+ let combinedArray = [
+   ...array1,
+   ...array2
+ ];
+ return combinedArray;
+
+};
 
 /***
  * Create an array that contain two functions:
@@ -42,7 +50,20 @@ const combineArray = (array1, array2) => {};
  * @example createArrayOfFunctions()[1](10, 10) // 0;
  */
 
-const createArrayOfFunctions = () => {};
+const createArrayOfFunctions = () => {
+  let add = (arg1, arg2) =>{
+    return arg1 + arg2;
+  };
+  let sub = (arg1, arg2) =>{
+    return arg1 - arg2;
+  };
+
+  let funcs = [ 
+    add,
+    sub
+  ];
+  return funcs;
+};
 
 /**
  * Loop through the array using a for loop (or for ... of loop) and return the highest number
@@ -53,7 +74,16 @@ const createArrayOfFunctions = () => {};
  * @example highestNumber([-1, -5, -4]) // -1
  *
  **/
-const highestNumber = (numbers) => {};
+const highestNumber = (numbers) => {
+  let maxNum = numbers[0];
+  for (let i = 0; i< numbers.length; i++){
+      let currNum = numbers[i];
+      if(currNum > maxNum) {
+          maxNum = currNum;
+      }
+  } 
+  return maxNum;
+};
 
 /**
  * Given an array of objects, where each object has an ID,
@@ -90,8 +120,16 @@ const highestNumber = (numbers) => {};
  *
  * Please note, the loop never iterates over the last item, because we found our object. There is no need to continue looping.
  */
-
-const findAndAbort = (arr, id) => {};
+const abortAt = 0;
+const findAndAbort = (arr, id) => {
+  for (let i = 0; i < arr.length; i++ ){
+    if( arr[i].id === id ){
+      return arr[i];
+   } else if (arr === abortAt){
+     break;
+   }
+  }
+  };
 
 /**
  * Check to see if a string is a palindrome.
@@ -103,7 +141,20 @@ const findAndAbort = (arr, id) => {};
  * @example isPalindrome("nope"); // false
  */
 
-const isPalindrome = (str) => {};
+const isPalindrome = (str) => {
+  let myArray = str.split('');
+  let backwardsArray = [];
+  for(let i = myArray.length-1; i>=0; i--){
+      backwardsArray.push(myArray[i]);
+     
+  }
+  let backWord = backwardsArray.join('');
+  if(backWord === str){
+      return true;
+  } else{
+      return false;
+  }
+};
 
 /**
  * Use sets to remove duplicate elements from an array
@@ -115,7 +166,10 @@ const isPalindrome = (str) => {};
  * removeDuplicates(); // [2, 3, 4, 5, 6, 7, 32]
  */
 
-const removeDuplicates = (numbers) => {};
+const removeDuplicates = (numbers) => {
+  let noDupes = [...new Set(numbers)];
+  return noDupes;
+};
 
 /**
  * Make an object "myDog" that represents a dog. It should contain the properties:
@@ -125,7 +179,15 @@ const removeDuplicates = (numbers) => {};
  * @return {object}
  */
 
-const createDogObject = () => {};
+const createDogObject = () => {
+  let myDog = {
+    name: "Scout",
+    legs: "four",
+    tails: "one",
+    owners: ["Jimmy", "Hillary"]
+  };
+  return myDog;
+};
 
 /**
  * Return the value for hat inside of the clothes object
@@ -140,6 +202,7 @@ const accessAnItemObject = () => {
     shirt: "jersey",
     shoes: "cleats",
   };
+  return clothes.hat;
   // Write code here
 };
 
@@ -162,6 +225,13 @@ const updateStudentObject = () => {
     lastName: "",
     skills: [],
   };
+
+  let updatedStudent = Object.assign({}, student,{
+    firstName : "Hillary",
+    lastName : "Wallace",
+    skills: ["JavaScript", "HTML", "CSS"]
+  });
+return updatedStudent;
   // Write code here
 };
 
@@ -179,6 +249,7 @@ const returnObjectValues = () => {
     owner: "Stacy",
     name: "Rocket",
   };
+  return Object.values(dog);
   // Add code here
   // HINT: you need to return an array
 };
@@ -194,7 +265,23 @@ const returnObjectValues = () => {
  * combineObject(obj1, obj2); // { firstName: "Clark", lastName: "Kent" }
  */
 
-const combineObject = (obj1, obj2) => {};
+const combineObject = (obj1, obj2) => {
+  // let obj1 = {
+  //   firstName: "Clark"
+  // }
+  // let obj2 = {
+  //   lastName: "Kent"
+  // }
+  // let firstAndLast = {
+  //   ...obj1,
+  //   ...obj2
+  // }
+  let firstAndLast = {
+    ...obj1,
+    ...obj2
+  };
+  return firstAndLast;
+};
 
 module.exports = {
   addToAnArray,
