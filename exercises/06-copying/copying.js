@@ -1,3 +1,5 @@
+const { updateStudentObject } = require("../04-collections/collections");
+
 /**
  * Change the value of email property within an object.
  * You should use the spread operator to shallow copy the original object.
@@ -16,7 +18,10 @@
  *
  * user.email = "icanhascheeseburger@yahoo.com"; // This should not change newUser
  */
-const changeEmail = (user, newEmail) => {};
+const changeEmail = (user, newEmail) => {
+let newUser = {...user, email: newEmail};
+return newUser;
+};
 
 /**
  * Add a new item to a shopping cart. You should deep copy any array and objects.
@@ -37,7 +42,13 @@ const changeEmail = (user, newEmail) => {};
  * shoppingCart[0].price = 9000000; // This should not change newShoppingCart
  * newItem.price = 10; // This should not change newItem
  */
-const addToCart = (shoppingCart, newItem) => {};
+const addToCart = (shoppingCart, newItem) => {
+const newShoppingCart = JSON.parse( JSON.stringify(shoppingCart));
+newShoppingCart.push(JSON.parse ( JSON.stringify(newItem)));
+return newShoppingCart;
+};
+
+
 
 module.exports = {
   changeEmail,

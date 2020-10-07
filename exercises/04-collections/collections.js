@@ -120,12 +120,13 @@ const highestNumber = (numbers) => {
  *
  * Please note, the loop never iterates over the last item, because we found our object. There is no need to continue looping.
  */
-const abortAt = 0;
 const findAndAbort = (arr, id) => {
+  let match;
   for (let i = 0; i < arr.length; i++ ){
     if( arr[i].id === id ){
       return arr[i];
-   } else if (arr === abortAt){
+   } else if (arr === id){
+     arr[i] = match;
      break;
    }
   }
