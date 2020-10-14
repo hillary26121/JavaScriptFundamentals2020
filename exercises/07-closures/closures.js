@@ -17,8 +17,8 @@
 const greeter = () => {
   return {
     hello: (name) =>{
-      return `Hello ${name} `;
-    },
+      return `Hello ${name} !`;
+    }
   };
 
 };
@@ -76,6 +76,21 @@ const groceryList = () => {
  * @returns {Object} an object that has two methods. See comments below.
  */
 const calculator = () => {
+  let sum = 0;
+    return {
+      setter: (num) =>{
+       sum = num + sum;
+      },
+      getter: () =>{
+        return sum;
+      }
+    };
+
+
+  };
+
+
+
   /**
    * Create a private variable called "sum"
    * @var {number}
@@ -91,7 +106,7 @@ const calculator = () => {
    * that should return the value of "sum" above.
    * @returns {number} the value of sum
    */
-};
+
 
 /**
  * CHALLENGE!
@@ -119,7 +134,11 @@ const calculator = () => {
  * guessRound2(1); // "No more guesses. The answer was 0"
  */
 
-const guessingGame = (numberOfRounds) => {};
+const guessingGame = (numberOfRounds) => {
+  // let guess = 0;
+
+  // const answer = Math.floor(Math.random()* 50){
+};
 
 module.exports = {
   greeter,

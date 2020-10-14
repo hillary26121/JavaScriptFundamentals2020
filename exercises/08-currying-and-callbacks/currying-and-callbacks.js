@@ -14,13 +14,9 @@
  * @param {number} b
  */
 const multiplier = (a, b) => {
-  if(a){
+  if(a && b){
     return a * b;
-} else if (b){
-    return a * b;
-} else {
-    return a *b;
-}
+  } return (c) => a * c;
 };
 
 
