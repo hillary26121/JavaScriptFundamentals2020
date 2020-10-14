@@ -135,9 +135,18 @@ const calculator = () => {
  */
 
 const guessingGame = (numberOfRounds) => {
-  // let guess = 0;
-
-  // const answer = Math.floor(Math.random()* 50){
+  const answer = Math.floor(Math.random() * 11);
+  let guesses = 0;
+return (guess) => {
+       if(guesses++ > numberOfRounds){
+           return;
+       }
+       if(guess === answer){
+           return "You got it!";
+       } else if(guess > answer){
+           return "You're too high!";
+       } else if(guess) {return "You're too low";}
+   };
 };
 
 module.exports = {
