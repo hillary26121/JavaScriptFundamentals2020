@@ -6,8 +6,12 @@
  * @returns {mixed} a single value in the array
  */
 const find = (arr, callback) => {
-  let newArr = arr.find(callback);
-  return newArr;
+   for (let item of arr){
+   if(callback(item, arr.indexOf(item), arr) === true){
+    return item;
+  
+  } 
+}
 };
 
 /**
