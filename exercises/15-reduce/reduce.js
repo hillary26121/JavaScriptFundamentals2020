@@ -64,10 +64,13 @@ const generateTally = (array) => {
  * }
  */
 const arrayToObject = (arr) => {
-  let newThingy = arr.reduce ( (acc, currObj)=>{
-    return arr["id"] + acc + currObj + arr;
-  },{});
-  return newThingy;
+ return arr.reduce( (acc, item)=>{
+  return{
+    ...acc,
+    [item.id]: item,
+  };
+  
+ },{});
 };
 
 module.exports = {
