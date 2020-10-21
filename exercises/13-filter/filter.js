@@ -31,7 +31,12 @@ const filter = (arr, callback) => {
  */
 const deleteUser = (arr, id) => {
   const findUser = arr.filter( user => user.id === id);
-  return findUser;
+  if(user["id"] === id){
+    return false;
+  } else {
+    return true;
+  }
+  
 };
 
 module.exports = {

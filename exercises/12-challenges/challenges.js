@@ -31,7 +31,7 @@ function findLongestWordLength(str) {
  *
  */
 function fearNotLetter(str) {
-  // let letters = "abcdefghijklmnopqrstuvwxyz";
+let str = "abcdefghijklmnopqrstuvwxyz";
  if (str && 0 < str.length){
    let start = str.charCodeAt(0);
    for (let i = 1; i < str.length; i++){

@@ -6,14 +6,24 @@
  *  addItems([1,5,6]) // 12
  *  addItems([1,-2,-3]) // -4
  */
-const addItems = (arr) => {};
+const addItems = (arr) => {
+  let sum = arr.reduce( (acc, num)=>{
+      return num + acc;
+  },0);
+  return sum;
+};
 
 /**
  * Create a function that flattens an array (that is, it should "unnest" a nested array).
  * @param {array} array e.g. `[[1, 3], [5, 10]]`
  * @returns {array} new, flattened array e.g. `[1, 3, 5, 10]`
  */
-const flattenArray = (array) => {};
+const flattenArray = (array) => {
+  let flattenedArray = array.reduce( (acc, both)=>{
+    return [ ...acc, ...both];
+  },[]);
+  return flattenedArray;
+};
 
 /**
  * Create a function that tallies the number of each kind of "thing" within the array
@@ -23,7 +33,13 @@ const flattenArray = (array) => {};
  *   let fruits = ['Apple', 'Orange', 'Apple', 'Blueberry', 'Grape', 'Grape'];
  *   generateTally(generateTally); // {Apple: 2, Orange: 1, Blueberry: 1, Grape: 2}
  */
-const generateTally = (array) => {};
+const generateTally = (array) => {
+    let tally = array.reduce( (acc, currentItem)=>{
+      acc[currentItem] = (acc[currentItem] || 0) +1;
+      return acc;
+    },{});
+    return tally;
+};
 
 /**
  * Create a function, that when given an array of object literals, will index the object literals by a single column
@@ -47,7 +63,12 @@ const generateTally = (array) => {};
  *   456: {id, 456, name: 'Rachel', age: 35}
  * }
  */
-const arrayToObject = (arr) => {};
+const arrayToObject = (arr) => {
+  let newThingy = arr.reduce ( (acc, currObj)=>{
+    return arr["id"] + acc + currObj + arr;
+  },{});
+  return newThingy;
+};
 
 module.exports = {
   addItems,
