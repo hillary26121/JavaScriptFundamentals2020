@@ -62,7 +62,17 @@ toggleButton.addEventListener('click', toggleComments);
  * When the user types inside the textbook labeled "Enter mystery text here",
  * it should display what the user is typing in the <div></div> tags below.
  */
-
+let captureInput = document.querySelector('#capture-input');
+let displayText = document.querySelector('#display-text');
+const displayInput = () =>{
+   let value = captureInput.value;
+   if(value){
+      displayText.textContent = value;
+   } else{
+      displayText.textContent = "You haven't typed anything yet!";
+   }
+};
+captureInput.addEventListener('keydown', displayInput);
 /**
  * Challenge 5: Display the results of the world's most pointless search engine.
  *
