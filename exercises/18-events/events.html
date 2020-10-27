@@ -25,16 +25,16 @@
     <!-- Custom styles for this template -->
     <link href="events.css" rel="stylesheet" />
 
-    <script src="events.js" defer></script>
+    <script src="events.js" defer></script> 
   </head>
 
   <body>
     <section class="bg-dark pt-4 pb-4 text-center">
       <!-- This button should alert the user when clicked on -->
-      <button class="btn btn-success btn-lg">Alert Me!</button>
+      <button class="btn btn-success btn-lg" id = "alert-button">Alert Me!</button>
 
       <!-- This button should become disabled and display "Loading ..." when clicked on -->
-      <button class="btn btn-warning btn-lg">Charge My Credit Card</button>
+      <button class="btn btn-warning btn-lg" id = "charge-button">Charge My Credit Card</button>
     </section>
 
     <section class="container pt-4 pb-4">
@@ -64,11 +64,11 @@
         <p>Highway I-87 is now closed.</p>
 
         <!-- This is the button that will toggle the comments -->
-        <p><button class="btn btn-primary">View Comments</button></p>
+        <p><button class="btn btn-primary" id = "toggle-button">View Comments</button></p>
 
         <!-- This is the comment section you need to toggle -->
         <div class="card card-body hidden">
-          <div class="media">
+          <div class="media" data-target="comment">
             <img
               src="https://s3.amazonaws.com/uifaces/faces/twitter/vivekprvr/128.jpg"
               alt=""
@@ -76,7 +76,7 @@
               height="60"
               class="mr-3"
             />
-            <div class="media-body">
+            <div class="media-body" data-target="comment">
               This comment doesn't add any value to the conversation.
               <div class="text-muted"><small>November 11, 2019</small></div>
             </div>

@@ -13,7 +13,7 @@
     <style>
       .hidden {
         display: none;
-      }
+      } 
     </style>
     <script src="transforming-dom.js" defer></script>
   </head>
@@ -53,7 +53,7 @@
         color using inline styles.
       </div>
 
-      <div class="alert alert-danger">
+      <div class="alert alert-party">
         Change the text color of this <em>&lt;div&gt;</em> to another color by
         changing the class.
         <a
@@ -63,7 +63,7 @@
         >
       </div>
 
-      <div class="alert alert-warning">
+      <div class="alert alert-warning hidden">
         Hide this <em>&lt;div&gt;</em> using inline styles.
       </div>
 
@@ -73,14 +73,14 @@
       </p>
       <div class="alert alert-success hidden">Pee a boo!</div>
 
-      <div class="alert alert-info mt-5">
+      <div class="alert alert-info mt-5" id = "conditionalOutput">
         Using conditional logic (e.g. an if statement), change the
         <em>&lt;div&gt;</em> below to say "&check; blue" if
-        <button class="btn btn-primary ml-1 m4-1" type="button">
+        <button class="btn btn-primary ml-1 m4-1" type="button" id = "myButton">
           this button
         </button>
         has class <em>btn-primary</em>.
-        <div class="text-dark">
+        <div class="text-dark" id = "other-text-dark">
           <!-- if button has class "btn-primary", put text here -->
         </div>
       </div>

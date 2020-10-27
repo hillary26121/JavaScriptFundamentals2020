@@ -10,3 +10,17 @@
  * 
  * Do not change the HTML unless you are instructed to do so.
  */
+
+ let firstListItem = document.querySelector("#myId");
+ console.log(firstListItem);
+
+ let allListItems = document.querySelectorAll(".bg-warning");
+ console.log(allListItems);
+
+ let targetedCells = document.querySelectorAll(".bg-success > div.col");
+ console.log(targetedCells);
+
+ let targetedButtonLink = document.querySelectorAll("[data-target]");
+//  let targetedButtonLinkArray = [...target];
+ console.log(targetedButtonLink); 
+
