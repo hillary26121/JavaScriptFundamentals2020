@@ -64,15 +64,15 @@ toggleButton.addEventListener('click', toggleComments);
  */
 let captureInput = document.querySelector('#capture-input');
 let displayText = document.querySelector('#display-text');
-const displayInput = () =>{
-   let value = captureInput.value;
+const displayInput = (event) => {
+   let value = event.target.value;
    if(value){
       displayText.textContent = value;
    } else{
       displayText.textContent = "You haven't typed anything yet!";
    }
 };
-captureInput.addEventListener('keydown', displayInput);
+captureInput.addEventListener('input', displayInput);
 /**
  * Challenge 5: Display the results of the world's most pointless search engine.
  *
@@ -85,6 +85,21 @@ captureInput.addEventListener('keydown', displayInput);
  * The exercise must be completed with a form handler
  * and you must prevent the page from refreshing when the form is submitted.
  */
+// let orm = document.querySelector('.form-group');
+
+document.querySelector('#search-form').addEventListener('submit', (event)=>{
+   event.preventDefault();
+   let searchResults = document.querySelector('#search-results');
+   let searchInput = document.querySelector('#search-input');
+   searchResults.textContent = `No results for ${searchInput.value} found! Sorry bout it.`;
+   
+
+});
+  
+
+
+
+
 
 /**
  * Challenge 6: Agree to the terms and conditions
@@ -96,7 +111,31 @@ captureInput.addEventListener('keydown', displayInput);
  *
  * To start, you will need to hide some element on the page and change the input's classes.
  */
+let errorLabel = document.querySelector('#error-label');
+let thankYouLabel = document.querySelector('#thank-you-label');
+let termsForm = document.querySelector('#terms-form');
+let checkBox = document.querySelector('#terms');
+let agreeLabel = document.querySelector('#agree-label');
 
+thankYouLabel.style.display = "none";
+errorLabel.style.display = "none";
+
+let agreeToTerms = (event) =>{
+   event.preventDefault();
+   if(checkBox.checked){
+      thankYouLabel.style.display = "block";
+      errorLabel.style.display = "none";
+      agreeLabel.style.color = "green";
+
+}  else{
+     thankYouLabel.style.display = "none";
+     errorLabel.style.display = "block";
+     agreeLabel.style.color = "red";
+     
+}
+};
+
+termsForm.addEventListener('submit', agreeToTerms);
 /**
  * Challenge 7: Add pagination to the student table.
  *
@@ -107,3 +146,14 @@ captureInput.addEventListener('keydown', displayInput);
  * - Clicking on the "«" and "1" buttons should show everything in data-group="1" and hide everything in data-group="2".
  * - Clicking on the "2" and "»" buttons should show everything in data-group="2" and hide everything in data-group="1".
  */
+
+ let nameTable = document.querySelector('#name-table');  
+ let tableButton = document.querySelector('#table-button');
+ let pagination = (event) =>{
+
+ };
+
+ tableButton.addEventListener('click', pagination);
+
+ 
+ 
