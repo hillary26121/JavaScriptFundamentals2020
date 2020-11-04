@@ -28,7 +28,9 @@
  *
  * @returns {Promise} which will resolve to the JSON above.
  */
-const getBooksApi = () => {};
+const getBooksApi = () => {
+  
+};
 
 /**
  * @var {array} data an array of graphic novels
