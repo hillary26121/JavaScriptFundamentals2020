@@ -1,3 +1,30 @@
+let dropdown = document.querySelector('#dropdown');
+let photo = document.querySelector('#get-schwifty');
+
+
+const getCharacter = () =>{
+  axios({
+    url: 'https://rickandmortyapi.com/api/character/',
+    method: 'GET',
+  })
+  .then(response=>{
+    console.log(response);
+    // response.data.result.forEach( (character, index)=>{
+    //   let option =  document.createElement('option');
+    //   option.text = character[index].name;
+    //   console.log(option);
+    // });
+    let option =  document.createElement('option');
+    option.text = character[index].name;
+    console.log(option);
+  })
+  .catch(error=>{
+    console.log(error);
+  });
+
+};
+
+dropdown.addEventListener('change', getCharacter() );
 /**
  *
  * As a user, I should be able to a pick Rick and Morty character from a drop-down, and it should display an image of that character.
