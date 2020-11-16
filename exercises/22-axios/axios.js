@@ -1,30 +1,34 @@
-let dropdown = document.querySelector('#dropdown');
-let photo = document.querySelector('#get-schwifty');
+let dropdown = document.querySelector("#dropdown");
+let photo = document.querySelector("#get-schwifty");
+let character = null;
 
-
-const getCharacter = () =>{
+const getCharacter = () => {
   axios({
-    url: 'https://rickandmortyapi.com/api/character/',
-    method: 'GET',
+    url: "https://rickandmortyapi.com/api/character/",
+    method: "GET",
   })
-  .then(response=>{
-    console.log(response);
-    // response.data.result.forEach( (character, index)=>{
-    //   let option =  document.createElement('option');
-    //   option.text = character[index].name;
-    //   console.log(option);
-    // });
-    let option =  document.createElement('option');
-    option.text = character[index].name;
-    console.log(option);
-  })
-  .catch(error=>{
-    console.log(error);
-  });
+    .then((response) => {
+      let characters = Object.values(response.data.results);
+      character = response;
+      characters.forEach( (character, index)=>{
+        
+        let option = document.createElement('option');
+        option.value = index;
+        option.textContent = character.name;
+        dropdown.appendChild(option);
 
+      });
+     
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 };
+getCharacter();
 
-dropdown.addEventListener('change', getCharacter() );
+dropdown.addEventListener('change', (e)=>{
+ photo.src = character.data.results[e.target.value].image;
+});
 /**
  *
  * As a user, I should be able to a pick Rick and Morty character from a drop-down, and it should display an image of that character.
