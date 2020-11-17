@@ -12,7 +12,6 @@ describe("exercises/24-module-pattern/module-pattern.js", () => {
     it("should return a list of passing students", () => {
       const passingStudents = TeacherGradeBook.getPassingStudents();
       const students = passingStudents.map((student) => student.firstName);
-      console.log('HERE',students);
       expect(students).to.be.equalTo(["John", "Bill", "Joe", "Billy"]);
     });
   });
